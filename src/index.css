@@ -67,3 +67,31 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.dragon-card {
+  border-radius: 1rem;
+}
+
+.dragon-card h1 {
+ text-transform: capitalize;
+}
+
+.dragon-card div {
+
+}
+
+.fire {
+  background-color: crimson;
+}
+
+.water {
+  background-color: dodgerblue;
+}
+
+.air {
+  background-color: whitesmoke;
+}
+
+.earth {
+  background-color: brown;
+}
