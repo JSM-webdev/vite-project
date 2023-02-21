@@ -1,23 +1,25 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { DragonCard } from './components/dragonCard'
+import { MyDice } from './components/dice'
 
-function DragonCard(props) {
-  console.log(props)
+
+
+const EventComponent = props => {
+  const [clicks, setClicks] = useState(0)
   return (
-    <div ClassName={props.type + ' dragon-card'}>
-      <h1>{props.type}</h1>
-      <div>{props.icon} <span>{props.clicks}</span></div>
-    </div>
+    <button onClick={() => setClicks(clicks+1)}>
+      Clicks: {clicks}
+    </button>
   )
 }
 
-
-
 function App() {
-  
+
   return (
     <div className="App">
+      <MyDice max={6}/>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />
@@ -26,11 +28,11 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-         <DragonCard clicks={0} type={'fire'} icon={'🐉'}/>  
-         <DragonCard clicks={0} type={'water'} icon={'🐉'}/> 
-         <DragonCard clicks={0} type={'air'} icon={'🐉'}/>  
-         <DragonCard clicks={0} type={'earth'} icon={'🐉'}/> 
-         
+      <EventComponent />
+     <DragonCard type={'fire'} icon={'🐉'}/>
+     <DragonCard type={'water'} icon={'🐉'}/>
+     <DragonCard type={'air'} icon={'🐉'}/>
+     <DragonCard type={'earth'} icon={'😀'}/>
     </div>
   )
 }
